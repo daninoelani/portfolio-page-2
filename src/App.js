@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Router, Link } from "@reach/router"
+import Header from './Components/Header'
+import Main from './Components/Main'
+import Resume from './Components/Resume'
+import Projects from './Components/Projects'
 
-function App() {
+
+const ResumePage = () => (
+  <div>
+    <Resume />
+  </div>
+);
+
+const HomePage = () => (
+  <div>
+    <Header />
+    <Main />
+  </div>
+);
+
+const ProjectPage = () => (
+  <div>
+    <Projects />
+  </div>
+);
+
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <nav>
+      <Link to='/'>Home</Link>{' '}
+      <Link to='/projects'>Projects</Link>{' '}
+      <Link to="/resume">Resume</Link>
+    </nav>
+    <Router>
+      <ResumePage path="/resume" />
+      <HomePage path='/' />
+      <ProjectPage path='/projects' />
+    </Router>
+    </>
+  )
 }
-
-export default App;
