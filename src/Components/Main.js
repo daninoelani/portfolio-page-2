@@ -26,7 +26,8 @@ const SkillTitle = styled.h2`
   padding: 2em 0 0 0;
 `
 const SkillSection = styled.section`
-  background: rgba(138, 43, 226, 0.4)
+  background: rgba(138, 43, 226, 0.4);
+  padding: 0 1em;
 `
 
 export default () => {
